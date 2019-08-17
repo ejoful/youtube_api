@@ -1,0 +1,512 @@
+update video 
+
+curl --request PUT \
+  'https://www.googleapis.com/youtube/v3/videos?part=snippet%2Cstatus%2Clocalizations%2CcontentDetails&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --data '{"id":"ZN4MrkSLAz4","snippet":{"description":"Gevent 20 gevent实现聊天服务器\ngevent是一个著名的开发框架。通过本课程可以学习到gevent的各个组件的原理、使用方法及高级技巧，并在实践中掌握gevent的应用场景，最后通过部分源码分析彻底掌握多开发编程的核心技巧。","tags":["Gevent","Gevent教程","Python Web开发教程"],"title":"Gevent 20 gevent实现聊天服务器","categoryId":"27","defaultAudioLanguage":"zh-CN"}}' \
+  --compressed
+
+
+search by channelid
+curl \
+  'https://www.googleapis.com/youtube/v3/search?part=%20snippet&channelId=UCAEDC_Ku-K6zTVpGi6kLS1g&maxResults=50&type=video&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --compressed
+
+
+{
+ "kind": "youtube#searchListResponse",
+ "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/5F_YP4llDbYwQsbUKZRVy4AN45s\"",
+ "nextPageToken": "CAIQAA",
+ "regionCode": "HK",
+ "pageInfo": {
+  "totalResults": 4204,
+  "resultsPerPage": 2
+ },
+ "items": [
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/_PFTo7x_hds0cQyIMdcgQTI9wbA\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "LK78awGogJQ"
+   },
+   "snippet": {
+    "publishedAt": "2017-02-24T05:06:38.000Z",
+    "channelId": "UCAEDC_Ku-K6zTVpGi6kLS1g",
+    "title": "嵌入式驱动开发环境搭建初级-15.Sourceinsight添加已有工程",
+    "description": "Sourceinsight添加已有工程.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/LK78awGogJQ/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/LK78awGogJQ/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/LK78awGogJQ/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "it技术学院",
+    "liveBroadcastContent": "none"
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/la7txM04iHWL2pKiM3CB2kBFKow\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "p5OXx_16K0o"
+   },
+   "snippet": {
+    "publishedAt": "2017-02-25T07:18:14.000Z",
+    "channelId": "UCAEDC_Ku-K6zTVpGi6kLS1g",
+    "title": "麦子学院-C语言内存操作-19.结构体字节对齐",
+    "description": "结构体字节对齐.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/p5OXx_16K0o/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/p5OXx_16K0o/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/p5OXx_16K0o/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "it技术学院",
+    "liveBroadcastContent": "none"
+   }
+  }
+ ]
+}
+
+
+playlists list
+
+curl \
+  'https://www.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=UCAEDC_Ku-K6zTVpGi6kLS1g&maxResults=50&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --compressed
+
+{
+ "kind": "youtube#playlistListResponse",
+ "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/1i0H11NMWZl1oAuK_949zhY-FWs\"",
+ "nextPageToken": "CAIQAA",
+ "pageInfo": {
+  "totalResults": 91,
+  "resultsPerPage": 2
+ },
+ "items": [
+  {
+   "kind": "youtube#playlist",
+   "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/vvpWtDFxdbiuNf5pn7TzJFi3M7k\"",
+   "id": "PLljKjXpjNpgc3JyAGsWbFVhg6JEHv6vQ3",
+   "snippet": {
+    "publishedAt": "2019-08-12T14:03:46.000Z",
+    "channelId": "UCAEDC_Ku-K6zTVpGi6kLS1g",
+    "title": "Gevent",
+    "description": "",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/Arl8m-OLCXo/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/Arl8m-OLCXo/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/Arl8m-OLCXo/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/Arl8m-OLCXo/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/Arl8m-OLCXo/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "it技术学院",
+    "localized": {
+     "title": "Gevent",
+     "description": ""
+    }
+   },
+   "contentDetails": {
+    "itemCount": 25
+   }
+  },
+  {
+   "kind": "youtube#playlist",
+   "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/P8FduET4a_BVvE0A9lv1Q83cYLM\"",
+   "id": "PLljKjXpjNpgeKOW9POJa3YYcvpReVWv-5",
+   "snippet": {
+    "publishedAt": "2019-08-12T13:48:11.000Z",
+    "channelId": "UCAEDC_Ku-K6zTVpGi6kLS1g",
+    "title": "Gulp+Angular+Express实现简易任务管理系统",
+    "description": "这是一门利用JavaScript进行前后端开发的进阶教程。教程中用到了较多比较常用和实用的前端技术、框架，工具等。 目标是让大家了解如何利用JavaScript进行前后端开发，前后端如何交互，以及如何实用前后端构建来提高开发效率。",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/PAZlHk4biDc/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/PAZlHk4biDc/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/PAZlHk4biDc/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/PAZlHk4biDc/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/PAZlHk4biDc/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "it技术学院",
+    "localized": {
+     "title": "Gulp+Angular+Express实现简易任务管理系统",
+     "description": "这是一门利用JavaScript进行前后端开发的进阶教程。教程中用到了较多比较常用和实用的前端技术、框架，工具等。 目标是让大家了解如何利用JavaScript进行前后端开发，前后端如何交互，以及如何实用前后端构建来提高开发效率。"
+    }
+   },
+   "contentDetails": {
+    "itemCount": 20
+   }
+  }
+ ]
+}
+
+
+playlists insert
+curl --request POST \
+  'https://www.googleapis.com/youtube/v3/playlists?part=snippet%2Cstatus&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --data '{"snippet":{"title":"Sample playlist created via API","description":"This is a sample playlist description.","tags":["sample playlist","API call"],"defaultLanguage":"zh-CN"},"status":{"privacyStatus":"public"}}' \
+  --compressed
+
+{
+ "kind": "youtube#playlist",
+ "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/DgNZWhmMbtbIuwevVlEqZ0-ma_g\"",
+ "id": "PLlb4uEGFtyhvkgO3YgrdS6QzOugtQlcV-",
+ "snippet": {
+  "publishedAt": "2019-08-17T13:24:11.000Z",
+  "channelId": "UCi7u4f2apNZWMnTfEjP9M0Q",
+  "title": "Sample playlist created via API",
+  "description": "This is a sample playlist description.",
+  "thumbnails": {
+   "default": {
+    "url": "http://s.ytimg.com/yts/img/no_thumbnail-vfl4t3-4R.jpg",
+    "width": 120,
+    "height": 90
+   },
+   "medium": {
+    "url": "http://s.ytimg.com/yts/img/no_thumbnail-vfl4t3-4R.jpg",
+    "width": 320,
+    "height": 180
+   },
+   "high": {
+    "url": "http://s.ytimg.com/yts/img/no_thumbnail-vfl4t3-4R.jpg",
+    "width": 480,
+    "height": 360
+   }
+  },
+  "channelTitle": "iwenxin",
+  "tags": [
+   "sample playlist",
+   "API call"
+  ],
+  "defaultLanguage": "zh-CN",
+  "localized": {
+   "title": "Sample playlist created via API",
+   "description": "This is a sample playlist description."
+  }
+ },
+ "status": {
+  "privacyStatus": "public"
+ }
+}
+
+
+playlists update
+curl --request PUT \
+  'https://www.googleapis.com/youtube/v3/playlists?part=snippet%2Cstatus&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --data '{"id":"YOUR_PLAYLIST_ID","snippet":{"title":"Updated sample playlist created via API","description":"This is the updated playlist description.","tags":["updated playlist","API FTW"]},"status":{"privacyStatus":"public"}}' \
+  --compressed
+
+{
+ "kind": "youtube#playlist",
+ "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/3nS6dVv5uN8q9cIq8H9Ouadxxn8\"",
+ "id": "PLljKjXpjNpgeHPU2UoAupvUbjk3noZNbX",
+ "snippet": {
+  "publishedAt": "2019-08-17T13:38:23.000Z",
+  "channelId": "UCAEDC_Ku-K6zTVpGi6kLS1g",
+  "title": "Updated sample playlist created via API",
+  "description": "This is the updated playlist description.",
+  "thumbnails": {
+   "default": {
+    "url": "http://s.ytimg.com/yts/img/no_thumbnail-vfl4t3-4R.jpg",
+    "width": 120,
+    "height": 90
+   },
+   "medium": {
+    "url": "http://s.ytimg.com/yts/img/no_thumbnail-vfl4t3-4R.jpg",
+    "width": 320,
+    "height": 180
+   },
+   "high": {
+    "url": "http://s.ytimg.com/yts/img/no_thumbnail-vfl4t3-4R.jpg",
+    "width": 480,
+    "height": 360
+   }
+  },
+  "channelTitle": "it技术学院",
+  "tags": [
+   "updated playlist",
+   "API FTW"
+  ],
+  "localized": {
+   "title": "Updated sample playlist created via API",
+   "description": "This is the updated playlist description."
+  }
+ },
+ "status": {
+  "privacyStatus": "private"
+ }
+}
+
+playlists delete
+curl --request DELETE \
+  'https://www.googleapis.com/youtube/v3/playlists?id=YOUR_PLAYLIST_ID&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --compressed
+
+
+
+playlistItem list
+curl \
+  'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=2&playlistId=PLljKjXpjNpgc3JyAGsWbFVhg6JEHv6vQ3&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --compressed
+
+{
+ "kind": "youtube#playlistItemListResponse",
+ "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/MBQKMKmJUW9fwh0BFGICfPeG1EA\"",
+ "nextPageToken": "CAIQAA",
+ "pageInfo": {
+  "totalResults": 25,
+  "resultsPerPage": 2
+ },
+ "items": [
+  {
+   "kind": "youtube#playlistItem",
+   "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/7tmNPlQsBthK9W_cVbJmiHrnPnA\"",
+   "id": "UExsaktqWHBqTnBnYzNKeUFHc1diRlZoZzZKRUh2NnZRMy5ENDU4Q0M4RDExNzM1Mjcy",
+   "snippet": {
+    "publishedAt": "2019-08-12T14:35:40.000Z",
+    "channelId": "UCAEDC_Ku-K6zTVpGi6kLS1g",
+    "title": "Gevent 1 gevent的起源，发展，特点，使用情况以及本机安装",
+    "description": "",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/Arl8m-OLCXo/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/Arl8m-OLCXo/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/Arl8m-OLCXo/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/Arl8m-OLCXo/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/Arl8m-OLCXo/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "it技术学院",
+    "playlistId": "PLljKjXpjNpgc3JyAGsWbFVhg6JEHv6vQ3",
+    "position": 0,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "Arl8m-OLCXo"
+    }
+   },
+   "contentDetails": {
+    "videoId": "Arl8m-OLCXo",
+    "videoPublishedAt": "2019-07-27T23:44:40.000Z"
+   }
+  },
+  {
+   "kind": "youtube#playlistItem",
+   "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/fBpoK-e01hqSKWUI4f6rXFq9t48\"",
+   "id": "UExsaktqWHBqTnBnYzNKeUFHc1diRlZoZzZKRUh2NnZRMy4yMDhBMkNBNjRDMjQxQTg1",
+   "snippet": {
+    "publishedAt": "2019-08-12T14:35:40.000Z",
+    "channelId": "UCAEDC_Ku-K6zTVpGi6kLS1g",
+    "title": "Gevent 2 gevent基础之进程,线程与协程",
+    "description": "",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/nko5JNgOisU/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/nko5JNgOisU/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/nko5JNgOisU/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/nko5JNgOisU/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "it技术学院",
+    "playlistId": "PLljKjXpjNpgc3JyAGsWbFVhg6JEHv6vQ3",
+    "position": 1,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "nko5JNgOisU"
+    }
+   },
+   "contentDetails": {
+    "videoId": "nko5JNgOisU",
+    "videoPublishedAt": "2019-07-27T23:44:40.000Z"
+   }
+  }
+ ]
+}
+
+playlistItem insert
+curl --request POST \
+  'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --data '{"snippet":{"playlistId":"PLljKjXpjNpgdHLonkBKaegmfjjTyrqyn3","position":0,"resourceId":{"kind":"youtube#video","videoId":"nko5JNgOisU"}}}' \
+  --compressed
+
+{
+ "kind": "youtube#playlistItem",
+ "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/F7C8m9sdgwD4uqfz3ty_v5gvS3M\"",
+ "id": "UExsaktqWHBqTnBnZEhMb25rQkthZWdtZmpqVHlycXluMy41NkI0NEY2RDEwNTU3Q0M2",
+ "snippet": {
+  "publishedAt": "2019-08-17T14:15:11.000Z",
+  "channelId": "UCAEDC_Ku-K6zTVpGi6kLS1g",
+  "title": "Gevent 2 gevent基础之进程,线程与协程",
+  "description": "",
+  "thumbnails": {
+   "default": {
+    "url": "https://i.ytimg.com/vi/nko5JNgOisU/default.jpg",
+    "width": 120,
+    "height": 90
+   },
+   "medium": {
+    "url": "https://i.ytimg.com/vi/nko5JNgOisU/mqdefault.jpg",
+    "width": 320,
+    "height": 180
+   },
+   "high": {
+    "url": "https://i.ytimg.com/vi/nko5JNgOisU/hqdefault.jpg",
+    "width": 480,
+    "height": 360
+   },
+   "standard": {
+    "url": "https://i.ytimg.com/vi/nko5JNgOisU/sddefault.jpg",
+    "width": 640,
+    "height": 480
+   }
+  },
+  "channelTitle": "it技术学院",
+  "playlistId": "PLljKjXpjNpgdHLonkBKaegmfjjTyrqyn3",
+  "resourceId": {
+   "kind": "youtube#video",
+   "videoId": "nko5JNgOisU"
+  }
+ }
+}
+
+playlistItems update
+curl --request PUT \
+  'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --data '{"id":"YOUR_PLAYLIST_ITEM_ID","snippet":{"playlistId":"YOUR_PLAYLIST_ID","position":1,"resourceId":{"kind":"youtube#video","videoId":"YOUR_VIDEO_ID"}}}' \
+  --compressed
+
+playlistItems delete
+curl --request DELETE \
+  'https://www.googleapis.com/youtube/v3/playlistItems?id=YOUR_PLAYLIST_ITEM_ID&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --compressed
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+{
+ "kind": "youtube#videoListResponse",
+ "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/ePvwAw-8xcKHgjPYJKLqrNeCHSs\"",
+ "pageInfo": {
+  "totalResults": 1,
+  "resultsPerPage": 1
+ },
+ "items": [
+  {
+   "kind": "youtube#video",
+   "etag": "\"0UM_wBUsFuT6ekiIlwaHvyqc80M/L8qKzPwZ_QTcjjSgdHbfQsi3qzA\"",
+   "id": "k892KDuUocY",
+   "snippet": {
+    "publishedAt": "2017-02-24T04:52:42.000Z",
+    "channelId": "UCAEDC_Ku-K6zTVpGi6kLS1g",
+    "title": "嵌入式驱动开发环境搭建初级-1.Vmware软件介绍",
+    "description": "嵌入式驱动开发环境搭建初级",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/k892KDuUocY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/k892KDuUocY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/k892KDuUocY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/k892KDuUocY/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/k892KDuUocY/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "it技术学院",
+    "tags": [
+     "嵌入式驱动",
+     "嵌入式驱动开发环境搭建初级",
+     "嵌入式开发环境",
+     "嵌入式开发环境搭建"
+    ],
+    "categoryId": "27",
+    "liveBroadcastContent": "none",
+    "localized": {
+     "title": "嵌入式驱动开发环境搭建初级-1.Vmware软件介绍",
+     "description": "嵌入式驱动开发环境搭建初级"
+    },
+    "defaultAudioLanguage": "zh-CN"
+   },
+   "contentDetails": {
+    "duration": "PT12M11S",
+    "dimension": "2d",
+    "definition": "hd",
+    "caption": "false",
+    "licensedContent": false,
+    "projection": "rectangular",
+    "hasCustomThumbnail": false
+   },
+   "statistics": {
+    "viewCount": "140",
+    "likeCount": "0",
+    "dislikeCount": "0",
+    "favoriteCount": "0",
+    "commentCount": "0"
+   }
+  }
+ ]
+}
+

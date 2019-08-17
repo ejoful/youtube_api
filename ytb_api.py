@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
+import requests
 
 class YoutubeApi:
     'Youtube api'
@@ -9,6 +10,9 @@ class YoutubeApi:
 
 
     def video_lists(self):
+        url =
+
+    def update_video(self):
         # TODO
 
     def playlists(self):
@@ -17,8 +21,6 @@ class YoutubeApi:
     def playlists_items(self):
         # TODO
 
-    def update_video(self):
-        # TODO
 
     def update_playlist(self):
         # TODO
