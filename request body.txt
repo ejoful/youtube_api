@@ -1,5 +1,34 @@
-update video 
+get accesstoken
+curl 'https://accounts.google.com/o/oauth2/iframerpc?action=issueToken&response_type=token&login_hint=AJDLj6KgV9kdAd77_xP7rgZrlfgtRsMzUCYtWNP_GEe92U4cXyANvheUfzLs1QJ_MlFS57aZkDztLv5PtK7PvwI97itrMFmJDrz0xQ02LYE1Nus2rMY7EgAy4cRYhCo5Yq5gY0x6iynQ&client_id=292824132082.apps.googleusercontent.com&origin=https%3A%2F%2Fexplorer.apis.google.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl&ss_domain=https%3A%2F%2Fexplorer.apis.google.com&include_granted_scopes=false'
+-H 'cookie: SMSV=ADHTe-DEhuda2ixl64a7vzmQdP8ClN4g7tkwNPijHdc2p0s2fvFkk-wp_ihE_FXu1IlhXsp54LOiSB25oLLXcgYQyB1GZkJTPtOBMOZwnjM3xZryusAoOQE; CONSENT=YES+HK.zh-CN+201905; ACCOUNT_CHOOSER=AFx_qI56srSJnCNUkMX5cJA22EYdYH_fAeI1qIu01nq23CCUJi72vS5Aj3queSeXXCnLZqi2Mpg2liFQk87ZCZ9TJ4X3WU-ielEyNoCabFeUpd7HvvDRxSWF3gHBMDvGJhARpDwhmRiGLAylQZHtJs79m3mWV7yI31h3IWKpvqq9Zq_4eZ8-_Lx3C1ZqQH-wsZnPDuvIIE0MRv-_jkvLEFUzb9WYQFpBAb26gU957iNEWPjgEXAFgv-CF-YT7F_AkYtZH69lrtmPznb4ULI_AkK_dCj1F-NhcCfde_0GrepgEaPO6MJrsT9Tav-E5lYueZhvZj7wjFggCYdlD2qs1xtxouqGggtzxEWeqUgOICOS4gWwshjkEIMiTteQ901Wm4yN7YBOk07uEsYUfzzLkBkF4MCX8ZPOIMMITDy5XMy46SEwwRLUyfIyWjSU9MjnQLbicnW_mNlZ; SID=nAcX7y2ndjx_Z8w-e0qO_Ix-ykDqhFhbU2WjnsYuX-e9p5AssujaOMO6tiwHHiztYjy1Hg.; LSID=CPanel|adsense|doritos|lso|o.console.cloud.google.com|o.console.developers.google.com|o.mail.google.com|o.myaccount.google.com|o.takeout.google.com|s.HK|s.youtube|sitemaps|ss|wise:nAcX7xVP6QPv2MJlBdseMipo8jjoUirfV2-P_rclumrhdEm2lgizNM37w3xcQXIAes8lvA.; HSID=AX8sdhqxM95h7ooz7; SSID=AiOcuXiPPq0Q6-xTq; APISID=E6D4VVrWkGnfnTys/AXf3ePYG8XECc6pdZ; SAPISID=1Ugl32n8sARZChz3/AwMCV5nqiwkS4vOzz; ANID=AHWqTUkOThDB87Ck0_bEZk-NKcQNDFWELh-5uZuHclUrJAkJA1AYupw-6I0Q_BrJ; OCAK=kAG7G8xhj49Y5YVVqS72s3v2j2ZQyCb2lQqtoBZYAIw; user_id=115823145306655450326; LSOLH=EwyYh5XzVvwZYDgTgHYcB0um_kwCyhY:26100929:62b3; 1P_JAR=2019-08-18-05; SEARCH_SAMESITE=CgQIzo0B; NID=188=a4PzCPDnMDAtaXqEao6nQwlCxAxR4yAvWZI6Ywi3s2tYQSornoU53uxNd5UHaQofiEAokZJp5SzD6PMGQb2_YDF2kWY66PvFO53nAQZPOKZeIVwXOr4TQQMaKNfP4D3aV6Eb76X5YSuLtC9uyIavffhWykb-OiYuAypJQG4A8zIPQjZl1s7wU-KaseAIzKc5yE2sr84VHSOIxNa9VoCIKQpWpKgWm6ahehQTn2mS6yQpgebV-xUWpltI9C0aAq3aKZhsXQAQWAoXMItA6YfHvomzSBvbCki2-Z-se9RsmL9z1JUVbmnS5-9wrnyhtH094b5sMDyQVzvff879c51lyO0-r2zYbRop5JrR_jiXd1sq-ciukPTa9XuKZ0yxxPTZqM5kKsgKDuuJzvQasf4f3-YR5R-1RiduFEC0Y-aaAXzUmA; GAPS=1:B13NFYORUo_XALJu64KSrDa3C5u64vVnTJhb1If392C0mvWCqy1VkUVTqi30flrL3EPlNotduPvdFlKQR08IbkNswUseISGY4hBM2g4mAezgF8shHQvnSVJXS2VqfA:R4PLFt4kdY3pDkyj; SIDCC=AN0-TYtvAz9OvmWpp-q4cKk5i1S6ka5a_UfmKPMEUNHFsv_dov4D-OOpfFWmi0WRrR62YYRL5FQC'
+-H 'dnt: 1'
+-H 'accept-encoding: gzip, deflate, br'
+-H 'accept-language: zh-CN,zh;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6,zh-HK;q=0.5,zh-TW;q=0.4'
+-H 'x-chrome-id-consistency-request: version=1,client_id=77185425430.apps.googleusercontent.com,device_id=6dfd46ef-d49b-4fec-ac2a-73e278f460c2,sync_account_id=115823145306655450326,signin_mode=all_accounts,signout_mode=show_confirmation'
+-H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'
+-H 'accept: */*'
+-H 'referer: https://accounts.google.com/o/oauth2/iframe'
+-H 'authority: accounts.google.com'
+-H 'x-requested-with: XmlHttpRequest'
+-H 'x-chrome-connected: mode=0,enable_account_consistency=false'
+-H 'x-client-data: CIi2yQEIorbJAQipncoBCKijygEIsafKAQjiqMoBCPGpygEIzK7KAQ==' --compressed
 
+{
+  "token_type": "Bearer",
+  "access_token": "ya29.GmBoB-bfgKRf6tZr8tbA8j9veVA4yuMSahC8hrMyNV54pBwRjCekLoiaL7oSPJD1P7b1Af5g3Pj_dCw1FjPul4EyNsLHEKEkmpQx0tBm4HZgtGjGIvx97V-0aG-kDA0STfs",
+  "scope": "https://www.googleapis.com/auth/youtube.force-ssl",
+  "login_hint": "AJDLj6KgV9kdAd77_xP7rgZrlfgtRsMzUCYtWNP_GEe92U4cXyANvheUfzLs1QJ_MlFS57aZkDztLv5PtK7PvwI97itrMFmJDrz0xQ02LYE1Nus2rMY7EgAy4cRYhCo5Yq5gY0x6iynQ",
+  "expires_in": 3600,
+  "session_state": {
+    "extraQueryParams": {
+      "authuser": "0"
+    }
+  }
+}
+
+
+
+update video
 curl --request PUT \
   'https://www.googleapis.com/youtube/v3/videos?part=snippet%2Cstatus%2Clocalizations%2CcontentDetails&key=[YOUR_API_KEY]' \
   --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
