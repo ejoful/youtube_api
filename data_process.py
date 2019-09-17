@@ -227,7 +227,7 @@ class Data_process(object):
                     'source_playlist_id': '',
                     'n': course['title'],
                     'p': 'public',
-                    'session_token': 'QUFFLUhqa1EzVElnVUp6aHlsdTBLMWt3aDFTYnRXbGFzd3xBQ3Jtc0tuVXNlUG9KNkJlV0hZMms1WU1XXzB0WnYzd3BCVzNFbGlIb1cxbFVnVmdrRkdJWmZzRnAtY3ExU29Jb0Jyc0hzM0hnX0tzY3Uxb0FrTkhNNXhvLXdiaWczeGI2QklmQTVyYkFKdzRaTU1vakJQTTlKU0dqV3NYd3dGd05YeksxRGFIVms5WWRBdTlNX3YtSjNnLXp5UTRtYllXUENiem4yd0JQb2FYVkxhR0dvOTZjUm8='
+                    'session_token': 'QUFFLUhqa3RUUlFtaTBzYTRXX29kQnBjVm5JV1JSYkwzd3xBQ3Jtc0tudlByWllpRXdNMTlZYk1kZEh5Q1BOZmxwU1N3Yk1OT2RNb0NJYUNCd1IxS1BxdENpQVUxdTZ5YnVXUWJuT3hGNWRUQXEtempKUnJjWGpzbWN3VC1GX2lma19yY1ZpYnpucUhKOGg5RkxoNWU5Nl9IaklXaGVTZHpiakdVZlZGTU5tdkxPbC1TLVRWS0xyTEtVNUJnWVhVcXUwOTRlTkVQWXRGTHZVbnI5bUhUU1JHREk='
                 }
                 # print(type(json.dumps(data)))
                 # print(json.dumps(data))
@@ -247,7 +247,7 @@ class Data_process(object):
         create_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         with self.connection.cursor() as cursor:
             # Read a single record title like '" + ctitle + "%' and
-            sql = "select a.*,b.des,b.keywords,b.title as ctitle,b.list_id as blist_id from tbl_video as a,tbl_course as b where a.course_id=b.id and b.list_id is not null and a.is_update_des=0 limit 59;"
+            sql = "select a.*,b.des,b.keywords,b.title as ctitle,b.list_id as blist_id from tbl_video as a,tbl_course as b where a.course_id=b.id and a.video_id is not null and b.list_id is not null and a.is_update_des=0 limit 60;"
             cursor.execute(sql)
             videos = cursor.fetchall()
             for video in videos:
@@ -281,14 +281,14 @@ class Data_process(object):
                 data = {
                     'playlist_id': item['list_id'],
                     'playlist_description': item['des'],
-                    'session_token': 'QUFFLUhqblhLRGFlZjY0RWJRdUFlT1J4RUV1c0dteUQtZ3xBQ3Jtc0ttc1N4THFodE9CTFhZTHpjcUJsal9yWE1QSldEdzhJNDNsZ2owbXpTWk9SV3R1cm1KLUM3cjBMTFI3WERlRF9MSmRjQ2RPdmJKZE5vWF9MMHJmTEZzUU9MdU5aYXUxVWxoWFNwMEJ2R1QxQ3JwT1BDSnJaM0pQQTFWY3pHMDhBUHBaR0Y3Zm9GLTFIV0lqN3hDeEhBWWdXd1dsZEQyRnNHMmlic3lEQkVGNGVWaXJnLXc='
+                    'session_token': 'QUFFLUhqbmE3NXpDS21DTmk2UW1abzZ0TVR6WENtZ09DZ3xBQ3Jtc0tscTFwV2s2a1hoRnExdDFOekVYdUh5dkZiQ2g4VlZRck9CN19lMWFTU3NNQzBpaUtvSDVCbjUwa05yTHRvZVVKbVVPbDZZUTZkZGVhX2Z1TUU3R2NEUFI3eGUzNmFmdk1xSkh1TjVVSjhTZWVYdzZWNVVXalpiMnRLU2x3ak5IV1l1blFVNjJObE8zX2tGb0U2WXFIX2kzMXZJQVhYc2Y5OS1xMVF5VmdEcXRzdGRsMlk='
                 }
                 # print(type(json.dumps(data)))
                 # print(json.dumps(data))
                 # exit()
                 response_str = x.set_playlist_description(data)
                 response_dict = json.loads(response_str)
-                print(response_dict)
+                print(response_str)
                 if 'form_html' in response_dict:
                     print('success')
                     sql = "update tbl_course as a set a.is_update_playlist_des=1,a.update_playlist_des_time='"+create_time+"'  where a.id='" + str(item['id']) + "';"
@@ -347,6 +347,27 @@ class Data_process(object):
             cursor.execute(update_sql)
             self.connection.commit()
 
+    def list_course(self):
+        with self.connection.cursor() as cursor:
+            # Read a single record title like '" + ctitle + "%' and
+            sql = "SELECT a.*,b.video_id FROM `tbl_course` as a,tbl_video as b where a.id=b.course_id and b.position=0 and a.list_id is not null and b.video_id is not null;"
+            cursor.execute(sql)
+            items = cursor.fetchall()
+            str = ''
+            li_str = ''
+            for index, item in enumerate(items):
+                li_str += '<li><a href="https://www.youtube.com/watch?v='+item['video_id']+'&list='+item['list_id']+'">' + item['title'] + '</a></li>'
+                # if (index+1) % 100 == 0:
+                #     str += '<ul style="float: left;">' + li_str + '</ul>'
+                #     li_str = ''
+            if li_str is not '':
+                str += '<ul style="float: left;">' + li_str + '</ul>'
+                li_str = ''
+            print(str)
+
+
+
+
 
     def handle_error(self, e):
         print('handle_error')
@@ -367,4 +388,5 @@ a = Data_process()
 # a.create_playlist()
 # a.create_playlist2()
 # a.update_video_description()
-a.update_playlist_description()
+# a.update_playlist_description()
+a.list_course()
