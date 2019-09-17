@@ -11,8 +11,8 @@ import time
 class Data_process(object):
     def __init__(self):
         self.connection = pymysql.connect(host='localhost',
-                                     user='root',
-                                     password='asdf@#123.',
+                                     user='xxxx',
+                                     password='xxxxx',
                                      db='maiziedu_first',
                                      charset='utf8',
                                      cursorclass=pymysql.cursors.DictCursor)
